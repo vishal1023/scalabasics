@@ -1,3 +1,5 @@
+
+
 class Foo(val name: String, val age: Int, val sex: Symbol)
 
 object Foo {
