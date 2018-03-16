@@ -1,3 +1,4 @@
+import scala.Array.concat
 import scala.collection.mutable.ArrayBuffer
 
 //Need to initialize array with element type and number of elements
@@ -9,7 +10,7 @@ arr(1) = 20
 arr
 
 //array direct initialization with elements
-val arr1 = Array( "Hi", "Hello", "Greetings")
+val arr1 = Array("Hi", "Hello", "Greetings")
 arr1(2) = "bye"
 arr1
 
@@ -47,9 +48,35 @@ str(1) = "hello world"
 // as I showed you in my answer to your previous question.
 
 // Fill with 10 empty strings (creates 10 elements in the ArrayBuffer)
-val strings = ArrayBuffer.fill(10) { "" }
+val strings = ArrayBuffer.fill(10) {
+  ""
+}
 
 // Now you can set them (valid indices are 0...9)
 strings(0) = "abc1"
 strings(1) = "abc2"
 
+//Array concatenation
+var myList1 = Array(1, 2, 3, 4)
+var myList2 = Array(1, 2, 3, 4)
+
+var myList = concat(myList1, myList2)
+
+println(myList.length)
+
+myList.apply(1)
+
+var arrDouble = Array.apply(Double, (1.0, 2.3, 3.9, 3.2))
+println(arrDouble.length)
+
+println(arrDouble(1))
+
+var tabulateArray = Array.tabulate(10)(_ + 1)
+var tabulate2DArray = Array.tabulate(5, 5)(_ + _)
+
+for (i <- tabulate2DArray.indices) {
+  for (j <- tabulate2DArray.indices) {
+    print(" " + tabulate2DArray(i)(j))
+  }
+  println()
+}
